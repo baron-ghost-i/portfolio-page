@@ -1,0 +1,103 @@
+#skillsPage {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	font-size: var(--small);
+}
+
+#skillsPage > #content {
+	display: grid;
+	place-content: center;
+	flex-grow: 1;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	gap: 1rem;
+	padding: 1rem;
+	animation: appear 0.5s ease-in 0s 1 normal forwards;
+}
+
+#skillsPage h3 {
+	margin: 0em 0em 1em 0em;
+}
+
+#skillsPage h4 {
+	margin: 0;
+	margin-bottom: 0.25em;
+}
+
+#skillsPage > #content > div {
+	padding: 1em;
+	border-radius: 1em;
+	border: solid 2px var(--blue-dark);
+}
+
+#skillsPage ul {
+	display: flex;
+	flex-direction: column;
+	text-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	&.subgroup {gap: 0.5em;}
+	&.skillList {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+}
+#skillsPage li::marker {
+	content: none;
+}
+
+li.skills {
+	display: flex;
+	flex-direction: column;
+}
+
+svg {
+	height: 0.5em;
+	width: clamp(90%, 22em, 100%);
+	border: solid 1px black;
+	box-shadow: 0.1em 0.1em 0.1em black;
+	margin: 0em 0em 1em 0em;
+	transition: all 0.2s ease;
+}
+
+svg > rect {
+	height: 100%;
+	fill: var(--blue-light);
+	animation: fillbar 0.5s ease-in 0.25s 1 normal both;
+}
+
+.night {
+	& svg > rect {
+		fill: var(--blue-dark);
+	}
+	& svg {
+		background-color: lightgray;
+		border-style: ridge;
+	}
+	& #skillsPage > #content > div {
+		border-color: var(--blue-light);
+	}
+}
+
+@media (max-aspect-ratio: 1/1) {
+	
+	#skillsPage {
+		font-size: 1.5rem;
+	}
+	
+	#skillsPage > #content {
+		grid-template-columns: 1fr;
+		& > div {
+			height: auto;
+		}
+	}
+
+	svg {width: 100%}
+}
+
+@media (max-width: 480px) {
+	#skillsPage {
+		font-size: 2rem;
+	}
+}

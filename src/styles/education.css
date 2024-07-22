@@ -1,0 +1,191 @@
+#educationPage {
+	display: flex;
+	flex-direction: column;
+}
+
+#educationPage > h2 {
+	margin-left: 3em;
+	margin-right: 3em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	border-bottom: solid 1px;
+	animation: appear 0.5s both;
+	font-weight: 600;
+}
+
+/*Timeline*/
+#timeline {
+	display: inline-block;
+	margin-left: 2em;
+	margin-right: 1em;
+	padding-left: 2em;
+	border-left: solid 0.4em var(--blue-dark);
+	margin-bottom: 2em;
+	animation: appear 0.5s ease-in-out 0s 1 normal both;
+}
+.night #timeline {
+	border-color: var(--blue-light);
+}
+.listItem > .image {
+	box-sizing: content-box;
+	background-size: contain;
+	height: 2em;
+	width: 2em;
+	position: absolute;
+	left: 1em;
+	border: solid 0.2em var(--blue-dark);
+	border-radius: 2em;
+	background-color: var(--bg);
+	z-index: 1;
+	animation: popup 0.5s ease-in-out 0s 1 normal both;
+}
+
+.night .listItem > .image{
+	border-color: var(--blue-light);
+	background-color: var(--bg-dark);
+}
+
+.image#ju {
+	background-image: url('../assets/education/ju.png');
+}
+.night .image#ju {
+	background-image: url('../assets/education/ju-night.png');
+}
+
+.image#kps {
+	background-image: url('../assets/education/kps.png');
+}
+.night .image#kps {
+	background-image: url('../assets//education/kps-night.png');
+}
+
+.image#misk {
+	background-image: url('../assets/education/misk.png');
+}
+.night .image#misk {
+	background-image: url('../assets/education/misk-night.png');
+}
+
+.image#jeea {
+	background-image: url('../assets/education/iitb.svg');
+}
+.image#jeem {
+	background-image: url('../assets/education/jeem.png');
+	background-repeat: no-repeat;
+}
+.image#wbjee {
+	background-image: url('../assets/education/wbjee.png');
+}
+.night .image#jeea {
+	background-image: url('../assets/education/iitb-night.svg');
+}
+
+.image > a {
+	background-color: transparent;
+	display:block;
+	height: 100%;
+	width: 100%;
+}
+
+/*Internal design*/
+.listItem {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+	& *:not(.image) {
+		position: relative;
+		animation: slidein 0.5s linear 0s 1 normal forwards;
+	}
+}
+
+.listItem > h3 {
+	font-weight: 500;
+	margin-bottom: 0;
+}
+.listItem > p.descriptor {
+	margin: 0;
+	font-size: 0.75em;
+}
+.listItem > p.descriptor::first-line{
+	font-size: 1.25em;
+}
+.listItem > p.content {
+	font-size: 0.8em;
+	margin: 0;
+	margin-top: 0.5em;
+	white-space: pre-wrap;
+}
+.show-more{
+	display: inline-block;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
+	font-size: 1em;
+	line-height: 1em;
+	user-select: none;
+}
+.show-more::after {
+	display: inline-block;
+	content: ' ▶';
+	text-decoration: none;
+	padding-left: 0.2em;
+}
+.show-more.show::after {
+	content: ' ▼';
+}
+.show-more:hover{
+	cursor: pointer;
+}
+
+.more-details {
+	max-height: 0px;
+	font-size: 0.75em;
+	overflow: hidden;
+	transition: max-height 0.2s cubic-bezier(1,1,1,1) !important;
+	&.show {
+		max-height: 15em;
+	}
+}
+.more-details:has(#ju) {
+	&.show {max-height: 10em}
+}
+
+table.ed-table, table.ed-table tr {
+	border: solid 2px var(--blue-dark);
+	border-collapse: collapse;
+	text-align: center;
+	min-width: 15em;
+}
+
+.night .more-details>table.ed-table * {
+	border-color: var(--blue-light);
+}
+
+table.ed-table th {
+	font-weight: 400;
+	background-color: var(--blue-dark);
+	color:white;
+	text-decoration: underline solid;
+	text-align: center;
+}
+
+.night table.ed-table th {
+	background-color: var(--blue-light);
+	color: black;
+}
+
+@media (max-width:480px) {
+	#educationPage {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-aspect-ratio:1/1) and (min-width: 240px) {
+	#educationPage {
+		font-size: 2rem;
+	}
+}
+
+@media (max-aspect-ratio:1/1) and (min-width:480px){
+	#educationPage {
+		font-size: 1.75rem;
+	}
+}
