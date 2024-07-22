@@ -66,7 +66,7 @@ export default function Projects({menuButton, menuChange}: menuHandlingProps){
 				alt="React Icon"
 				title="This"
 				content="This portfolio site has been made using React.js, with SVGs made with Figma."
-				link='https://subhranil-ghoshal-portfolio.vercel.app'
+				link='https://github.com/baron-ghost-i/portfolio-page/'
 				tools={['React.js', 'TypeScript', 'Figma', 'Vercel']}
 			/>
 			
