@@ -75,9 +75,11 @@
 }
 
 .card img {
-	border: solid 1px black;
 	max-height: 80%;
 	max-width: 80%;
+	&#PrototypeProcessor, &#Modulator {
+		border: solid 1px black;
+	}
 }
 
 .night {
