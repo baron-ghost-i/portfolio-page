@@ -33,7 +33,7 @@ function Card({id='', imageLink, alt, title, content, link, tools}: CardProps) {
 				</div>
 
 				<div className='front'>
-					<img src={imageLink} alt={alt}/>
+					<img src={imageLink} alt={alt} id={id}/>
 				</div>
 			
 			</div>
@@ -73,7 +73,7 @@ export default function Projects({menuButton, menuChange}: menuHandlingProps){
 			<Card
 				id="PrototypeProcessor"
 				imageLink="/projects/cpu.svg"
-				alt=""
+				alt="Schematic diagram of 8-bit prototype processor"
 				title="8-bit Prototype Processor"
 				content="A prototype processor which can perform addition, subtraction and comparison
 				on 8-bit numbers."
@@ -84,7 +84,7 @@ export default function Projects({menuButton, menuChange}: menuHandlingProps){
 			<Card
 				id="Modulator"
 				imageLink="/projects/am.png"
-				alt=""
+				alt="Amplitude Modulator Circuit"
 				title="Transistor-based Amplitude Modulator"
 				content={<>An amplitude modulator designed to modulate the amplitude of a carrier signal of frequency
 				100 kHz using a baseband signal of frequency 1 kHz.<br/>
