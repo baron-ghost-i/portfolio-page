@@ -8,17 +8,20 @@ interface CardProps {
 	title: string;
 	content: string | JSX.Element;
 	link: string;
-	tools: string[]
+	tools: string[];
+	order: number
 }
 
-function Card({id='', imageLink, alt, title, content, link, tools}: CardProps) {
+function Card({id='', imageLink, alt, title, content, link, tools, order}: CardProps) {
 	
 	let _link: JSX.Element;
-	if(link==='') _link = <></>;
-	else _link= <a href={link} target='_blank' rel='noopener noreferrer'>Check it out</a>
+	let _style= {'--animation-order': `${order}`} as React.CSSProperties;
+	if(link==='') {_link = <></>;}
+	else{ _link= <a href={link} target='_blank' rel='noopener noreferrer'>Check it out</a>}
+
 	
 	return (
-		<div id={id} className="card">
+		<div id={id} className="card" style={_style}>
 			<div className='inner'>
 			
 				<div className="back">
@@ -28,7 +31,7 @@ function Card({id='', imageLink, alt, title, content, link, tools}: CardProps) {
 					<span className="card-content">
 						{content}
 					</span>
-					{tools.length===0?<></>:<ul>Tools:<br/>{tools.map((value, index)=><li key={index} className="tool">{value}</li>)}</ul>}
+					{tools.length===0?<></>:<ul>Tools used:<br/>{tools.map((value, index)=><li key={index} className="tool">{value}</li>)}</ul>}
 					{_link}
 				</div>
 
@@ -43,7 +46,7 @@ function Card({id='', imageLink, alt, title, content, link, tools}: CardProps) {
 
 export default function Projects({menuButton, menuChange}: menuHandlingProps){
 	return (
-		<Page id='projectsPage' animated="" menuButton={menuButton} menuChange={menuChange}>
+		<Page id='projectsPage' animated="#content > .card, .card img" menuButton={menuButton} menuChange={menuChange}>
 			<div id='content'>
 				
 			<Card
@@ -58,6 +61,7 @@ export default function Projects({menuButton, menuChange}: menuHandlingProps){
 				}
 				link='https://github.com/baron-ghost-i/HoQ-Bot/'
 				tools={['Python', 'MongoDB']}
+				order={1}
 			/>
 			
 			<Card
@@ -68,6 +72,7 @@ export default function Projects({menuButton, menuChange}: menuHandlingProps){
 				content="This portfolio site has been made using React.js, with SVGs made with Figma."
 				link='https://github.com/baron-ghost-i/portfolio-page/'
 				tools={['React.js', 'TypeScript', 'Figma', 'Vercel']}
+				order={2}
 			/>
 			
 			<Card
@@ -79,6 +84,7 @@ export default function Projects({menuButton, menuChange}: menuHandlingProps){
 				on 8-bit numbers."
 				link=''
 				tools={['NI Multisim']}
+				order={3}
 			/>
 			
 			<Card
@@ -91,6 +97,7 @@ export default function Projects({menuButton, menuChange}: menuHandlingProps){
 				The circuit was simulated using NI Multisim and constructed on a breadboard.</>}
 				link=''
 				tools={['NI Multisim', 'Breadboard', '2N2222 NPN BJT', 'Resistors', 'Capacitors']}
+				order={4}
 			/>
 
 			</div>

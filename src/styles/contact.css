@@ -191,7 +191,11 @@ input#submit {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: transform 0.25s ease;
 	&:not(.fa-instagram){border-radius: 100%;}
+	&:hover {
+		transform: scale(1.5)
+	}
 }
 
 #sociallinks > a {
