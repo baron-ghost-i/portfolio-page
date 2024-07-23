@@ -10,7 +10,7 @@ import Projects from "./pages/projects"
 import Contact from './pages/contact';
 
 function isDark (dark: boolean) {
-	const wasDark = sessionStorage.getItem('dark');
+	const wasDark = localStorage.getItem('dark');
 	if(wasDark===null) {
 		if(dark) return ' night'
 		else return ''
@@ -23,7 +23,7 @@ function isDark (dark: boolean) {
 function App() {
 	const [dark, setTheme] = useState(
 		():boolean=>{
-			const _dark = sessionStorage.getItem('dark');
+			const _dark = localStorage.getItem('dark');
 			if(_dark===null) return true;
 			else return (_dark==='true')?true:false;
 		}
@@ -31,7 +31,7 @@ function App() {
 	const [menuButton, menuChange] = useState('≡');
 
 	useEffect(
-		()=>sessionStorage.setItem('dark', dark.toString()),
+		()=>localStorage.setItem('dark', dark.toString()),
 		[dark]
 	)
 
