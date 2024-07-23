@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import './App.css';
 import NavBar from "./pages/layout"
@@ -9,18 +9,40 @@ import Skills from './pages/skills';
 import Projects from "./pages/projects"
 import Contact from './pages/contact';
 
+function isDark (dark: boolean) {
+	const wasDark = sessionStorage.getItem('dark');
+	if(wasDark===null) {
+		if(dark) return ' night'
+		else return ''
+	} else {
+		if(wasDark==='true') return ' night'
+		else return ''
+	}
+}
+
 function App() {
-	const [dark, setTheme] = useState(0);
+	const [dark, setTheme] = useState(
+		():boolean=>{
+			const _dark = sessionStorage.getItem('dark');
+			if(_dark===null) return true;
+			else return (_dark==='true')?true:false;
+		}
+	);
 	const [menuButton, menuChange] = useState('≡');
 
+	useEffect(
+		()=>sessionStorage.setItem('dark', dark.toString()),
+		[dark]
+	)
+
 	return (
-		<div className={"App" + (!dark? " night" : "")}>
+		<div className={"App" + isDark(dark)}>
 			<Router>
 				<Routes>
 					<Route path="/" element={
 						<NavBar
-							theme={dark}
-							nightfunc={setTheme}
+							dark={dark}
+							setTheme={setTheme}
 							menuButton={menuButton}
 							menuChange={menuChange}/>
 						}>

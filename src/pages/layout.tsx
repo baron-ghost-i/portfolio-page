@@ -5,20 +5,39 @@ import React from 'react'
 
 interface Props {
 	to: string;
-	children: React.ReactNode
-	className: string
+	children: React.ReactNode;
+	className: string;
+	onclick: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 interface NavBarProps{
-	theme:number,
-	nightfunc:Function,
+	dark: boolean,
+	setTheme:Function,
 	menuButton:string,
 	menuChange: any
 }
 
+function Linker(props: Props) {
+	return (
+		<Link to={props.to} className={props.className} onClick={props.onclick}>
+			{props.children}
+		</Link>
+		)
+}
 
-export default function NavBar({ theme, nightfunc, menuButton, menuChange }:NavBarProps) {
-	const [button, ChangeButton] = useState('light_mode');
+export default function NavBar({ dark, setTheme, menuButton, menuChange }:NavBarProps) {
+	const [button, ChangeButton] = useState(
+		()=>{
+			const _dark = sessionStorage.getItem('dark');
+			if(_dark===null) {
+				if(dark) return 'dark_mode'
+				else return 'light_mode'
+			} else {
+				if(_dark==='true') return 'dark_mode'
+				else return 'light_mode'
+			}
+		}
+	);
 	//the purpose of T is to prevent animation of Night Mode when the page loads for the first time
 	const [T, changeT] = useState('');
 
@@ -28,8 +47,9 @@ export default function NavBar({ theme, nightfunc, menuButton, menuChange }:NavB
 	}
 	
 	function themeChange(){
-		nightfunc(!theme);
-		if(theme){
+		setTheme(!dark);
+		sessionStorage.setItem('dark', (!dark).toString());
+		if(dark){
 			changeT(' dark')
 			setTimeout(()=>ChangeButton('light_mode'), 200)
 		}
@@ -40,12 +60,9 @@ export default function NavBar({ theme, nightfunc, menuButton, menuChange }:NavB
 		openClose(menuButton)
 	}
 
-	function Linker(props: Props) {
-		return (
-			<Link to={props.to} className={props.className} onClick={()=>openClose(menuButton)}>
-				{props.children}
-			</Link>
-			)
+	const props = {
+		className: 'navItem',
+		onclick: ()=>openClose(menuButton)
 	}
 	
 	return (
@@ -56,14 +73,14 @@ export default function NavBar({ theme, nightfunc, menuButton, menuChange }:NavB
 				</button>
 			</div>
 			<div className={"navBar"+(menuButton==="≡"? " closed": "")}>
-				<Linker to="/" className="navItem">Home</Linker>
-				<Linker to="/about" className="navItem">About Me</Linker>
-				<Linker to="/education" className="navItem">Education</Linker>
-				<Linker to="/skills" className="navItem">Skills</Linker>
-				<Linker to="/projects" className="navItem">Projects</Linker>
-				<Linker to="/contact" className="navItem">Contact</Linker>
+				<Linker to="/" {...props}>Home</Linker>
+				<Linker to="/about"{...props}>About Me</Linker>
+				<Linker to="/education" {...props}>Education</Linker>
+				<Linker to="/skills" {...props}>Skills</Linker>
+				<Linker to="/projects" {...props}>Projects</Linker>
+				<Linker to="/contact" {...props}>Contact</Linker>
 				<button id="Toggle" className="navItem" onClick={themeChange}>
-					<span className={"material-symbols-outlined"+(T)} title={theme?"Dark Mode":"Light Mode"}>
+					<span className={"material-symbols-outlined"+(T)} title={dark?"Dark Mode":"Light Mode"}>
 						{button}
 					</span>
 				</button>
