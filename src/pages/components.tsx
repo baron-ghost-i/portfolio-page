@@ -36,14 +36,20 @@ export function skipAnimation(q:string='', r:React.RefObject<HTMLDivElement>){
 
 function Page({ id, className='', animated='', children, menuButton, menuChange }: (PageProps & menuHandlingProps)) {
 	const r = useRef<HTMLDivElement>(null);
+
+	const m = window.matchMedia('(max-width: 480px)');
 	
-	function handleClick() {
+	function handleClick(m: MediaQueryList) {
 		skipAnimation(animated, r);
-		if(menuButton==='×') menuChange('≡');
+		if(m.matches){
+			if(menuButton==='×') menuChange('≡');
+		}
 	}
+
+	m.addEventListener('mouse', ()=>handleClick(m))
 	
 	return (
-		<div ref={r} id={id} className={className+' page'} onClick={handleClick}>
+		<div ref={r} id={id} className={className+' page'} onClick={()=>handleClick(m)}>
 			{headers[id]===''?<></>:<PageHeader title={headers[id]}/>}
 			{children}
 		</div>

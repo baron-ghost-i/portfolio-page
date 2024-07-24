@@ -9,7 +9,7 @@ import Skills from './pages/skills';
 import Projects from "./pages/projects"
 import Contact from './pages/contact';
 
-function isDark (dark: boolean) {
+function isDark(dark: boolean) {
 	const wasDark = localStorage.getItem('dark');
 	if(wasDark===null) {
 		if(dark) return ' night'

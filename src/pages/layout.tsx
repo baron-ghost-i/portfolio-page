@@ -12,9 +12,9 @@ interface Props {
 
 interface NavBarProps{
 	dark: boolean,
-	setTheme:Function,
+	setTheme: React.Dispatch<React.SetStateAction<boolean>>,
 	menuButton:string,
-	menuChange: any
+	menuChange: React.Dispatch<React.SetStateAction<string>>
 }
 
 function Linker(props: Props) {
@@ -25,7 +25,7 @@ function Linker(props: Props) {
 		)
 }
 
-function openClose(button:String, menuChange: Function){
+function openClose(button: string, menuChange: React.Dispatch<React.SetStateAction<string>>){
 	if(button==="≡") menuChange("×")
 	else menuChange("≡")
 }
@@ -53,8 +53,7 @@ export default function NavBar({ dark, setTheme, menuButton, menuChange }:NavBar
 		if(!dark){
 			changeT(' dark')
 			setTimeout(()=>ChangeButton('light_mode'), 200)
-		}
-		else{
+		} else {
 			changeT(' light')
 			setTimeout(()=>ChangeButton('dark_mode'), 200)
 		}

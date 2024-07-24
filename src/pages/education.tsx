@@ -91,10 +91,9 @@ class Field extends Component<EFProps, stateType> {
 
 	moreDetails(){
 		const { name, start } = this.props;
-		if (name==='ju'){
+		if (name==='ju') {
 			return <Table name='ju' heading={entity[name].slice(1,3)} content={content[name]}/>
-		}
-		else{
+		} else {
 			return <Table name='kps' heading={entity[name].slice(1,3)} content={content[name+'-'+start]}/>
 		}
 	}

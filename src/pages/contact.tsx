@@ -18,7 +18,7 @@ const ContactForm = () => {
 				() => {
 				alert('Message sent successfully');
 				form.current?.reset();
-			}, (error: Error) => {
+				}, (error: Error) => {
 					alert('Message couldn\'t be sent, please try again.');
 					console.log(error.message)
 				}

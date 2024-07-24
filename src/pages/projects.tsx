@@ -15,7 +15,7 @@ interface CardProps {
 function Card({id='', imageLink, alt, title, content, link, tools, order}: CardProps) {
 	
 	let _link: JSX.Element;
-	let _style= {'--animation-order': `${order}`} as React.CSSProperties;
+	const _style= {'--animation-order': `${order}`} as React.CSSProperties;
 	if(link==='') {_link = <></>;}
 	else{ _link= <a href={link} target='_blank' rel='noopener noreferrer'>Check it out</a>}
 

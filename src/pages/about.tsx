@@ -2,21 +2,19 @@ import Page, { menuHandlingProps } from './components'
 import '../styles/about.css'
 
 function Details({details}:{details:string}) {
-	if (details==='Konnagar, Hooghly, West Bengal, India'){
+	if (details==='Konnagar, Hooghly, West Bengal, India') {
 		return (
 		<a href='https://www.google.com/maps/search/?api=1&query=Konnagar' target='_blank' rel='noopener noreferrer'>
 			{details}
 		</a>
 		)
-	}
-	else if (details==='ghoshalsubhranil@gmail.com'){
+	} else if (details==='ghoshalsubhranil@gmail.com') {
 		return (
 		<a href='mailto:ghoshalsubhranil@gmail.com' target='_blank' rel='noopener noreferrer'>
 			{details}
 		</a>
 		)
-	}
-	else {
+	} else {
 		return <>{details}</>
 	}
 }
