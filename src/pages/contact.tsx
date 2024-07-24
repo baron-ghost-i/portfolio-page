@@ -75,7 +75,7 @@ const ContactForm = () => {
 				<input id='submit' type="submit" value="Send"/>
 			</div>
 		</form>
-	  )
+	)
 }
 
 function SocialLinks() {
@@ -96,13 +96,13 @@ function SocialLinks() {
 					ghoshalsubhranil@gmail.com,
 				</a> or connect with me
 			</span>
-			{handles.map((value, i) => {
+			{handles.map((value) => {
 				return(
-					<a key={handles[i][0]}
-					href={handles[i][2]}
+					<a key={value[0]}
+					href={value[2]}
 					target='_blank'
 					rel='noopener noreferrer'>
-						<i className={handles[i][1]}></i>
+						<i className={value[1]}></i>
 					</a>
 				)
 			})}
