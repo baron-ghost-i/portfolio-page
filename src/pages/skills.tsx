@@ -1,12 +1,17 @@
 import Page, { menuHandlingProps } from "./components";
 import '../styles/skills.css'
 
+
+type hasSubgroups = {[key:string]:string[][]}
+type hasNoSubgroup = string[][]
+type skillType = {[key:string]: hasSubgroups | hasNoSubgroup}
+
 interface skillListProps {
 	section: string,
-	List: any
+	List: skillType
 }
 
-const skillsList: any = {
+const skillsList: skillType = {
 	'Core Subjects': [
 			['Analog Circuits', '60%'],
 			['Digital Circuits', '60%'],
@@ -77,7 +82,7 @@ function ListMaker({section, List}: skillListProps) {
 	}
 
 	else {
-		let subkeys = Object.keys(List[section]);
+		const subkeys = Object.keys(List[section]);
 		item = (
 			<ul className="subgroup">
 				{subkeys.map(
@@ -85,7 +90,7 @@ function ListMaker({section, List}: skillListProps) {
 						return (
 							<li key={subkey} className='skill-subgroup'>
 								<h4>{subkey}</h4>
-								{<ListMaker List={List[section]} section={subkey}/>}
+								{<ListMaker List={List[section] as hasSubgroups} section={subkey}/>}
 							</li>
 						)
 					}

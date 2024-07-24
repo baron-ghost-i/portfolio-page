@@ -9,7 +9,7 @@ interface PageProps {
 
 export interface menuHandlingProps {
 	menuButton: string;
-	menuChange: any
+	menuChange: React.Dispatch<React.SetStateAction<string>>
 }
 
 const headers:{[key:string]:string} = {
@@ -21,14 +21,14 @@ const headers:{[key:string]:string} = {
 	'contactPage': 'Contact Me'
 }
 
-export const PageHeader = ({title}:{title: string}) => <div className="header"><h1>{title}</h1></div>
+const PageHeader = ({title}:{title: string}) => <div className="header"><h1>{title}</h1></div>
 
-export function skipAnimation(q:string='', r:React.RefObject<HTMLDivElement>){
+function skipAnimation(q:string='', r:React.RefObject<HTMLDivElement>){
 	if (q==='') q='.header';
 	else q = '.header, '+q;
 
 	Array.prototype.slice.call(r.current?.querySelectorAll(q)).forEach((item:HTMLElement) => {
-		let anim = getComputedStyle(item, null).getPropertyValue('animation');
+		const anim = getComputedStyle(item, null).getPropertyValue('animation');
 		if(anim!=='none') {item.style.animation='none'}
 	})
 }
