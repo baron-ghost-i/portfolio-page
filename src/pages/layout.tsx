@@ -57,8 +57,6 @@ export default function NavBar({ dark, setTheme, menuButton, menuChange }:NavBar
 		className: 'navItem',
 		onclick: ()=>openClose(menuButton, menuChange)
 	}
-
-	/*const _dark = localStorage.getItem('dark')*/
 	
 	return (
 		<>
@@ -77,7 +75,6 @@ export default function NavBar({ dark, setTheme, menuButton, menuChange }:NavBar
 				<button id="Toggle" className="navItem" onClick={themeChange}>
 					<span className={"material-symbols-outlined"+(T)} title={!dark?"Dark Mode":"Light Mode"}>
 						{button}
-						{/*_dark===null?(dark?'dark_mode':'light_mode'):(_dark==='true'?'dark_mode':'light_mode')*/}
 					</span>
 				</button>
 			</div>
