@@ -33,15 +33,8 @@ function openClose(button: string, menuChange: React.Dispatch<React.SetStateActi
 export default function NavBar({ dark, setTheme, menuButton, menuChange }:NavBarProps) {
 	const [button, ChangeButton] = useState(
 		()=>{
-			const _dark = localStorage.getItem('dark');
-			console.log(_dark + typeof _dark)
-			if(_dark===null) {
-				if(dark) return 'light_mode'
-				else return 'dark_mode'
-			} else {
-				if(_dark==='true') return 'light_mode'
-				else return 'dark_mode'
-			}
+			if(dark) return 'light_mode'
+			else return 'dark_mode'
 		}
 	);
 	//the purpose of T is to prevent animation of Night Mode when the page loads for the first time

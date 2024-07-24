@@ -10,14 +10,8 @@ import Projects from "./pages/projects"
 import Contact from './pages/contact';
 
 function isDark(dark: boolean) {
-	const wasDark = localStorage.getItem('dark');
-	if(wasDark===null) {
-		if(dark) return ' night'
-		else return ''
-	} else {
-		if(wasDark==='true') return ' night'
-		else return ''
-	}
+	if(dark) return ' night'
+	else return ''
 }
 
 function App() {
