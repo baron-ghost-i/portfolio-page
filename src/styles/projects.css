@@ -13,11 +13,6 @@
 	padding: 2em;
 }
 
-@keyframes slideup {
-	from {top: -100%; opacity: 0;}
-	to {top: 0%; opacity: 1;}
-}
-
 #content > .card {
 	position: relative;
 	perspective: 100em;
@@ -84,21 +79,6 @@
 	animation: rotate-appear 0.5s ease-out 1.5s normal both;
 	&#PrototypeProcessor, &#Modulator {
 		border: solid 1px black;
-	}
-}
-
-@keyframes rotate-appear {
-	0% {
-		transform: rotate(360deg) scale(0);
-		opacity: 0;
-	}
-	50% {
-		transform: rotate(180deg) scale(0.5);
-		opacity: 0.5;
-	}
-	100% {
-		transform: rotate(0deg) scale(1);
-		opacity: 1;
 	}
 }
 

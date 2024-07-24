@@ -2,6 +2,11 @@
 	from {left:-100%;} to {left:0%;}
 }
 
+@keyframes slideup {
+	from {top: -100%; opacity: 0;}
+	to {top: 0%; opacity: 1;}
+}
+
 @keyframes reveal {
 	from {width: 0;}
 	to {width: 100%;}
@@ -18,8 +23,23 @@
 	}
 }
 
+@keyframes rotate-appear {
+	0% {
+		transform: rotate(360deg) scale(0);
+		opacity: 0;
+	}
+	50% {
+		transform: rotate(180deg) scale(0.5);
+		opacity: 0.5;
+	}
+	100% {
+		transform: rotate(0deg) scale(1);
+		opacity: 1;
+	}
+}
+
 @keyframes fadein-blur {
-	from{
+	from {
 		opacity: 0;
 		filter: blur(1em);
 		visibility: hidden;
