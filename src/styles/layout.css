@@ -69,6 +69,18 @@ a.navItem {
 	min-height: clamp(3em, 5vh, 5vh);
 }
 
+.page.outgoing {
+	& .header {
+		animation: app-slideout 0.25s ease-out 0.25s 1 normal both !important;
+	}
+	& #content {
+		animation: fadeout 0.25s ease-out 0s 1 normal both !important
+	}
+}
+.page.incoming {
+	transform: none;
+}
+
 @media (max-width:480px) {
 
 	#menuButtonCarrier {

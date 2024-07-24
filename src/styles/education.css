@@ -1,9 +1,9 @@
-#educationPage {
+#educationPage, #educationPage > #content {
 	display: flex;
 	flex-direction: column;
 }
 
-#educationPage > h2 {
+#educationPage h2 {
 	margin-left: 3em;
 	margin-right: 3em;
 	margin-bottom: 0.5em;

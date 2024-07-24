@@ -62,7 +62,7 @@ a {
 
 @media (prefers-reduced-motion) {
 	.App * {
-		animation: none !important;
+		animation: none;
 		transition-duration: 0s;
 	}
 }

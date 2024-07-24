@@ -1,5 +1,5 @@
-import React, { ReactNode, useContext, useEffect, useRef } from "react";
-import { menuChangingContext } from './contextExport'
+import React, { ReactNode, useContext, useEffect, useRef, useState } from "react";
+import { menuChangingContext, transitionContext } from './contextExport'
 
 interface PageProps {
 	id: string;
@@ -35,12 +35,24 @@ function Page({ id, className='', animated='', children}: (PageProps)) {
 	const [menuButton, menuChange] = useContext(menuChangingContext) as [string, React.Dispatch<React.SetStateAction<string>>];
 	useEffect(
 		()=>{
+			const page = document.getElementsByClassName('page')[0] as HTMLElement
+			page.style.opacity = '1';
 			return( ()=>{
-				const page = document.getElementsByClassName('page')[0] as HTMLElement
-					page.style.animation=('from {translateX: 0%} to {translateX: 100%}')
+				page.style.opacity='0'
 			}
 			)
 		}
+	)
+
+	const [_location, location, changeLocation] = useContext(transitionContext) as unknown as [Location, Location, React.Dispatch<React.SetStateAction<Location>>]
+	const [transitionStage, changeStage] = useState('incoming')
+
+	useEffect(
+		()=>{
+			if(_location !== location)
+				changeStage('outgoing');
+		},
+		[_location, location, transitionStage]
 	)
 
 	const m = window.matchMedia('(max-width: 480px)');
@@ -55,7 +67,18 @@ function Page({ id, className='', animated='', children}: (PageProps)) {
 	m.addEventListener('mouse', ()=>handleClick(m))
 	
 	return (
-		<div ref={r} id={id} className={className+' page'} onClick={()=>handleClick(m)}>
+		<div
+			ref={r}
+			id={id}
+			className={className+` page ${transitionStage}`}
+			onClick={()=>handleClick(m)}
+			onAnimationEnd={()=>{
+				if (transitionStage==='outgoing'){
+					changeStage('incoming')
+					changeLocation(_location)
+				}
+			}}
+		>
 			{headers[id]===''?<></>:<PageHeader title={headers[id]}/>}
 			{children}
 		</div>

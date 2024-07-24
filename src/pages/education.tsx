@@ -132,71 +132,77 @@ class Field extends Component<EFProps, stateType> {
 export default function Education(){
 	return (
 		<Page id='educationPage' animated='#educationPage > h2, #timeline, .listItem *' >
-			<h2>Schools</h2>
-			<div id="timeline">
-				<Field
-					name='ju'
-					description='B.E. Electronics and Tele-Communication Engineering'
-					start='2022'
-					end='2026'
-					content='CGPA (upto 2nd Year 1st Semester): 84.54%'
-					moreDetails={true}
-				/>
+			<div id='content'>
+				<h2>Schools</h2>
+				<div id="timeline">
+					<Field
+						name='ju'
+						description='B.E. Electronics and Tele-Communication Engineering'
+						start='2022'
+						end='2026'
+						content='CGPA (upto 2nd Year 1st Semester): 84.54%'
+						moreDetails={true}
+					/>
 
-				<Field
-					name='kps'
-					description='AISSCE 2022'
-					start='2020'
-					end='2022'
-					content='Aggregate Score: 96.0%'
-					moreDetails={true}
-				/>
+					<Field
+						name='kps'
+						description='AISSCE 2022'
+						start='2020'
+						end='2022'
+						content='Aggregate Score: 96.0%'
+						moreDetails={true}
+					/>
 
-				<Field
-					name='kps'
-					description='AISSE 2020'
-					start='2018'
-					end='2020'
-					content='Aggregate Score: 94.6%'
-					moreDetails={true}
-				/>
-				<Field
-					name='misk'
-					description='Nursery - Std. VIII'
-					start='2007'
-					end='2018'
-					content='Primary and middle school'
-					moreDetails={false}
-				/>
-	 		</div>
-			<h2>Examinations</h2>
-			<div id='timeline'>
-				<Field
-					name='jeea'
-					description='2022'
-					start=''
-					end=''
-					content='GMR: 19553'
-					moreDetails={false}
-				/>
-				<Field
-					name='jeem'
-					description='2022'
-					start=''
-					end=''
-					content={("GMR: 16941\nPercentile: 98.1441546\nAlloted seat in B.Tech. "
-						+"Electrical Engineering program at NIT Durgapur in first round of JoSAA")}
-					moreDetails={false}
-				/>
-				<Field
-					name='wbjee'
-					description='2022'
-					start=''
-					end=''
-					content={('GMR: 605\nPMR: 313\nSecured seat in B.E. Electronics and '
-						+'Tele-Communication Engineering program at Jadavpur University')}
-					moreDetails={false}
-				/>
+					<Field
+						name='kps'
+						description='AISSE 2020'
+						start='2018'
+						end='2020'
+						content='Aggregate Score: 94.6%'
+						moreDetails={true}
+					/>
+			
+					<Field
+						name='misk'
+						description='Nursery - Std. VIII'
+						start='2007'
+						end='2018'
+						content='Primary and middle school'
+						moreDetails={false}
+					/>
+				</div>
+		
+				<h2>Examinations</h2>
+				<div id='timeline'>
+					<Field
+						name='jeea'
+						description='2022'
+						start=''
+						end=''
+						content='GMR: 19553'
+						moreDetails={false}
+					/>
+		
+					<Field
+						name='jeem'
+						description='2022'
+						start=''
+						end=''
+						content={("GMR: 16941\nPercentile: 98.1441546\nAlloted seat in B.Tech. "
+							+"Electrical Engineering program at NIT Durgapur in first round of JoSAA")}
+						moreDetails={false}
+					/>
+	
+					<Field
+						name='wbjee'
+						description='2022'
+						start=''
+						end=''
+						content={('GMR: 605\nPMR: 313\nSecured seat in B.E. Electronics and '
+							+'Tele-Communication Engineering program at Jadavpur University')}
+						moreDetails={false}
+					/>
+				</div>
 			</div>
 		</Page>
 	);
