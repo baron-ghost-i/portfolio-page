@@ -1,15 +1,11 @@
-import React, { ReactNode, useRef } from "react";
+import React, { ReactNode, useContext, useEffect, useRef } from "react";
+import { menuChangingContext } from './contextExport'
 
 interface PageProps {
 	id: string;
 	className?: string;
 	animated?: string;
 	children?: ReactNode;
-}
-
-export interface menuHandlingProps {
-	menuButton: string;
-	menuChange: React.Dispatch<React.SetStateAction<string>>
 }
 
 const headers:{[key:string]:string} = {
@@ -34,8 +30,18 @@ function skipAnimation(q:string='', r:React.RefObject<HTMLDivElement>){
 }
 
 
-function Page({ id, className='', animated='', children, menuButton, menuChange }: (PageProps & menuHandlingProps)) {
+function Page({ id, className='', animated='', children}: (PageProps)) {
 	const r = useRef<HTMLDivElement>(null);
+	const [menuButton, menuChange] = useContext(menuChangingContext) as [string, React.Dispatch<React.SetStateAction<string>>];
+	useEffect(
+		()=>{
+			return( ()=>{
+				const page = document.getElementsByClassName('page')[0] as HTMLElement
+					page.style.animation=('from {translateX: 0%} to {translateX: 100%}')
+			}
+			)
+		}
+	)
 
 	const m = window.matchMedia('(max-width: 480px)');
 	

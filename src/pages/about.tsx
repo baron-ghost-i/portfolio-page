@@ -1,4 +1,4 @@
-import Page, { menuHandlingProps } from './components'
+import Page from './components'
 import '../styles/about.css'
 
 function Details({details}:{details:string}) {
@@ -29,9 +29,9 @@ function TR({head, details}: {head:string, details:string}){
 	)
 }
 
-export default function AboutMe({menuButton, menuChange}: menuHandlingProps){
+export default function AboutMe(){
 	return (
-		<Page id='aboutPage' animated="#summary, #details, img[alt='Subhranil Ghoshal']" menuButton={menuButton} menuChange={menuChange}>
+		<Page id='aboutPage' animated="#summary, #details, img[alt='Subhranil Ghoshal']" >
 			<div id='content'>
 				<div id='summary'>
 				<h3 id='summary-title'>Summary</h3>

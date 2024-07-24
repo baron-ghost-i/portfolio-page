@@ -1,4 +1,4 @@
-import Page, { menuHandlingProps } from "./components";
+import Page from "./components";
 import '../styles/projects.css'
 
 interface CardProps {
@@ -44,9 +44,9 @@ function Card({id='', imageLink, alt, title, content, link, tools, order}: CardP
 	)
 }
 
-export default function Projects({menuButton, menuChange}: menuHandlingProps){
+export default function Projects(){
 	return (
-		<Page id='projectsPage' animated="#content > .card, .card img" menuButton={menuButton} menuChange={menuChange}>
+		<Page id='projectsPage' animated="#content > .card, .card img" >
 			<div id='content'>
 				
 			<Card

@@ -1,6 +1,6 @@
 import "../styles/home.css";
 import { Link } from "react-router-dom";
-import Page, { menuHandlingProps } from "./components";
+import Page from "./components";
 
 const links: {[key:string]:Array<string>} = {
 	'github': ["https://www.github.com/baron-ghost-i", 'github'],
@@ -20,9 +20,9 @@ function Linker({name}:{name:string}){
 	)
 }
 
-const Home = ({menuButton, menuChange}: menuHandlingProps) => {
+const Home = () => {
 	return (
-	<Page id='homePage' className='centered' animated='#l1, #l2, a, #links' menuButton={menuButton} menuChange={menuChange}>
+	<Page id='homePage' className='centered' animated='#l1, #l2, a, #links' >
 		<div id="content">
 			<div id='text'>
 					<p id="l1">Hello, I'm Subhranil Ghoshal</p>

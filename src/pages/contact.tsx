@@ -1,7 +1,7 @@
 import "../styles/contact.css"
 import emailjs from '@emailjs/browser'
 import React, { useRef } from "react"
-import Page, { menuHandlingProps } from "./components";
+import Page from "./components";
 
 const ContactForm = () => {
 	const form = useRef<HTMLFormElement>(null);
@@ -110,9 +110,9 @@ function SocialLinks() {
 	)
 }
 
-export default function Contact ({menuButton, menuChange}: menuHandlingProps) {
+export default function Contact () {
 	return (
-		<Page id='contactPage' animated="#contactform, #socials" menuButton={menuButton} menuChange={menuChange}>
+		<Page id='contactPage' animated="#contactform, #socials" >
 			<div id="content">
 				<div id='contactform'>
 					<ContactForm/>

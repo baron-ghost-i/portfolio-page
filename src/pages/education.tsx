@@ -1,6 +1,6 @@
 import { Component } from "react";
 import "../styles/education.css"
-import Page, { menuHandlingProps } from "./components"
+import Page from "./components"
 
 interface EFProps {
 	name: string;
@@ -129,9 +129,9 @@ class Field extends Component<EFProps, stateType> {
 	}	
 }
 
-export default function Education({menuButton, menuChange}: menuHandlingProps){
+export default function Education(){
 	return (
-		<Page id='educationPage' animated='#educationPage > h2, #timeline, .listItem *' menuButton={menuButton} menuChange={menuChange}>
+		<Page id='educationPage' animated='#educationPage > h2, #timeline, .listItem *' >
 			<h2>Schools</h2>
 			<div id="timeline">
 				<Field

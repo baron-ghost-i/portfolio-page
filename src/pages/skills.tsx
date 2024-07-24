@@ -1,4 +1,4 @@
-import Page, { menuHandlingProps } from "./components";
+import Page from "./components";
 import '../styles/skills.css'
 
 
@@ -113,9 +113,9 @@ function Section({section, List}: skillListProps) {
 	)
 }
 
-export default function Skills({menuButton, menuChange}: menuHandlingProps){
+export default function Skills(){
 	return (
-		<Page id='skillsPage' animated="svg > rect, #skillsPage > #content" menuButton={menuButton} menuChange={menuChange}>
+		<Page id='skillsPage' animated="svg > rect, #skillsPage > #content" >
 			<div id='content'>
 				<Section section='Core Subjects' List={skillsList}/>
 				<Section section="Core - Software Tools" List={skillsList}/>
