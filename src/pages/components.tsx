@@ -14,7 +14,8 @@ const headers:{[key:string]:string} = {
 	'educationPage': 'Education',
 	'skillsPage':'Skills',
 	'projectsPage':'Projects',
-	'contactPage': 'Contact Me'
+	'contactPage': 'Contact Me',
+	'notfoundPage':'',
 }
 
 const PageHeader = ({title}:{title: string}) => <div className="header"><h1>{title}</h1></div>

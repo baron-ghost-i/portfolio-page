@@ -58,8 +58,13 @@ a.navItem {
 	padding-left: 2em;
 	align-items: center;
 	border-bottom: solid 2px var(--blue-dark);
-	animation: slidein 0.25s ease-out 0s normal both;
-	& > h1 {font-weight: 600; margin: 0;}
+	& > h1 {
+		display: flex;
+		flex-grow: 1;
+		font-weight: 600;
+		margin: 0;
+		animation: slidein 0.5s ease-out 0s normal both;
+	}
 }
 
 .night .header {border-bottom: solid 2px var(--blue-light);}
@@ -70,15 +75,18 @@ a.navItem {
 }
 
 .page.outgoing {
+	& #content * {
+		animation: none;
+	}
 	& .header {
-		animation: app-slideout 0.25s ease-out 0.25s 1 normal both !important;
+		overflow-x: hidden !important;
+	}
+	& .header > h1 {
+		animation: slideout 0.5s ease-out 0s 1 normal both;
 	}
 	& #content {
-		animation: fadeout 0.25s ease-out 0s 1 normal both !important
+		animation: fadeout 0.5s ease-out 0s 1 normal both !important;
 	}
-}
-.page.incoming {
-	transform: none;
 }
 
 @media (max-width:480px) {

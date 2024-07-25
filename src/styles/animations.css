@@ -1,5 +1,6 @@
 @keyframes slidein {
-	from {left:-100%;} to {left:0%;}
+	from {transform:translateX(-100%)}
+	to {transform: translateX(0%);}
 }
 
 @keyframes slideup {
@@ -7,7 +8,7 @@
 	to {top: 0%; opacity: 1;}
 }
 
-@keyframes app-slideout {
+@keyframes slideout {
 	from {
 		transform: translateX(0%);
 	}
@@ -17,8 +18,8 @@
 }
 
 @keyframes fadeout {
-	from {opacity: 1;}
-	to {opacity: 0;}
+	from {opacity: 1; filter: blur(0px);}
+	to {opacity: 0; filter:blur(2em);}
 }
 
 @keyframes reveal {

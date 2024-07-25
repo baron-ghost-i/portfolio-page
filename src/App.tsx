@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+
 import './App.css';
+
 import NavBar from "./pages/layout"
 import Home from "./pages/home"
 import AboutMe from "./pages/about";
@@ -8,6 +10,7 @@ import Education from './pages/education';
 import Skills from './pages/skills';
 import Projects from "./pages/projects"
 import Contact from './pages/contact';
+import NotFound from './pages/notfound';
 
 import { menuChangingContext, transitionContext } from './pages/contextExport';
 
@@ -38,6 +41,7 @@ function Content({prop}:{prop: contentProp}) {
 					<Route path="/projects" element={<Projects/>} />
 					<Route path="/contact" element={<Contact/>} />
 				</Route>
+				<Route path='*' element = {<NotFound/>}/>
 			</Routes>
 		</transitionContext.Provider>
 		)
