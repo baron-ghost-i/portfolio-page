@@ -21,8 +21,8 @@ const headers:{[key:string]:string} = {
 const PageHeader = ({title}:{title: string}) => <div className="header"><h1>{title}</h1></div>
 
 function skipAnimation(q:string='', r:React.RefObject<HTMLDivElement>){
-	if (q==='') q='.header';
-	else q = '.header, '+q;
+	if (q==='') q='.page.incoming .header > h1';
+	else q = '.page.incoming .header > h1, '+q;
 
 	Array.prototype.slice.call(r.current?.querySelectorAll(q)).forEach((item:HTMLElement) => {
 		const anim = getComputedStyle(item, null).getPropertyValue('animation');

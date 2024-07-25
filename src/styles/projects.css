@@ -90,7 +90,7 @@
 
 @media (max-aspect-ratio: 1/1) {
 	#projectsPage {
-		font-size: var(--normal);
+		font-size: var(--medium);
 	}
 	#projectsPage > #content {
 		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));

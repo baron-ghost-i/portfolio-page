@@ -82,7 +82,7 @@ a.navItem {
 		overflow-x: hidden !important;
 	}
 	& .header > h1 {
-		animation: slideout 0.5s ease-out 0s 1 normal both;
+		animation: slideout 0.5s ease-out 0s 1 normal both !important;
 	}
 	& #content {
 		animation: fadeout 0.5s ease-out 0s 1 normal both !important;
