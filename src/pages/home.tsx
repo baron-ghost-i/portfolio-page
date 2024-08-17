@@ -35,7 +35,7 @@ const Home = () => {
 				</Link>
 
 				<Link id="downloadCV"
-				to="https://drive.google.com/file/d/1kGJjGfFdtl0Z-8qU3T8fkzI8Qa9sPu8C/view"
+				to="https://drive.google.com/file/d/1ylHzrtT8ZGGGg3BWaCPYlO6q5JWm27no/view"
 				target="_blank" 
 				rel="noopener noreferrer"
 				download>

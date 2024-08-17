@@ -14,13 +14,14 @@ interface skillListProps {
 const skillsList: skillType = {
 	'Core Subjects': [
 			['Analog Circuits', '60%'],
-			['Digital Circuits', '60%'],
+			['Digital Circuits', '50%'],
+			['Computer Organization and Architecture', '40%'],
 			['Network Analysis and Synthesis', '60%'],
 			['Analog Communication Systems', '75%'],
-			['Digital Communication Systems', '10%'],
-			['Microwave Engineering', '50%'],
+			['Digital Communication Systems', '30%'],
+			['Microwave Engineering', '40%'],
 			['Semiconductor Physics', '40%'],
-			['Control Theory', '20%']
+			['Control Theory', '40%']
 		],
 	'Core - Software Tools': {
 		'Languages': [
@@ -28,7 +29,7 @@ const skillsList: skillType = {
 			['Python', '90%'],
 			['C', '75%'],
 			['Verilog', '50%'],
-			['LaTeX', '80%']
+			['LaTeX', '75%']
 		],
 		'Simulators': [
 			['NI Multisim', '85%'],
@@ -36,7 +37,7 @@ const skillsList: skillType = {
 			['LTSpice', '25%']
 		]
 	},
-	'Software': {
+	'More Software': {
 		'Web Development': [
 			['JavaScript/TypeScript', '75%'],
 			['HTML5', '65%'],
@@ -119,7 +120,7 @@ export default function Skills(){
 			<div id='content'>
 				<Section section='Core Subjects' List={skillsList}/>
 				<Section section="Core - Software Tools" List={skillsList}/>
-				<Section section='Software' List={skillsList}/>
+				<Section section='More Software' List={skillsList}/>
 			</div>
 		</Page>
 	)

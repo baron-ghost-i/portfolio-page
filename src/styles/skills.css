@@ -65,6 +65,7 @@ svg > rect {
 	height: 100%;
 	fill: var(--blue-light);
 	animation: fillbar 0.5s ease-in 0.25s 1 normal both;
+	transition: fill 0.1s ease-in-out;
 }
 
 .night {
