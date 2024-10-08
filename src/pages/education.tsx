@@ -31,7 +31,8 @@ const content: {[key: string]:Array<Array<string>>} = {
 	'ju':[
 		['1st', '9.10'],
 		['2nd', '8.24'],
-		['3rd', '9.38']
+		['3rd', '9.38'],
+		['4th', '9.38']
 	],
 	'kps-2020': [
 		['Physics', '95'],
