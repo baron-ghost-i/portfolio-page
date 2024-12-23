@@ -76,7 +76,7 @@ body {
 
 @media (min-width:1025px) and (min-height: 769px) {
 	html {
-		font-size: 25px;
+		font-size: 22.5px;
 	}
 }
 
@@ -88,7 +88,7 @@ body {
 
 @media (min-width:1440px) {
 	html {
-		font-size: 30px;
+		font-size: 22.5px;
 	}
 }
 
