@@ -112,7 +112,7 @@ input#submit {
 }
 
 input:focus+label, input:not(:placeholder-shown)+label {
-	transform: translateY(-2.67em);
+	transform: translateY(-2.67em) scale(0.8);
 	cursor:default;
 	&::after{content: '';}
 }
