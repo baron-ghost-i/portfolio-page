@@ -1,5 +1,6 @@
 import Page from './components'
 import '../styles/about.css'
+import { Link } from 'react-router-dom'
 
 function Details({details}:{details:string}) {
 	if (details==='Konnagar, Hooghly, West Bengal, India') {
@@ -37,28 +38,30 @@ export default function AboutMe(){
 				<h3 id='summary-title'>Summary</h3>
 					<span id='summary-content'>
 						<img alt='Subhranil Ghoshal' src='/image-self.jpeg'/>
-						Hi! I'm Subhranil Ghoshal, an undergraduate student of electronics and tele-communication 
-						engineering in his third year of study, at Jadavpur University, Kolkata.<br/><br/>
-						I’m passionate about communications engineering, with a strong interest in the designing of 
-						both analog and digital circuits. Consequently, I am well-acquainted with most tools utilized 
-						in these fields, ranging from languages like MATLAB and Python to circuit simulators like NI 
-						Multisim and Proteus.<br/><br/>
+
+						Hi! I'm Subhranil Ghoshal, an undergrad student of electronics and tele-communication 
+						engineering in his third year of study at Jadavpur University, Kolkata.<br/><br/>
+
+						I’m passionate about signal processing, with a strong interest in designing digital circuits.
+						Consequently, I am well-acquainted with several tools utilized in these fields, including but not
+						limited to MATLAB, Python, Verilog, TSpice, and - one must not forget - LaTeX. <br/><br/>
 
 						Besides electronics and communications, I’m also familiar with the core concepts of DSA and OOP, 
-						alongside a variety of programming languages, including C, JavaScript, Java, etc., which I
-						have utilized in a variety of projects since eighth grade.<br/><br/>
+						alongside a variety of programming languages, including C/C++, JavaScript, Java, Tcl, etc., which I
+						have utilized in a variety of projects since middle school. You can find out more about them <Link to='/skills'>here</Link>.
+						<br/><br/>
 		
 						Outside my professional life, I’m an avid reader of Bengali
-						and English literature, and an amateur photographer of the nature.<br/><br/>
+						and English literature, and an amateur photographer of the nature. I also dabble with origami from time to time,
+						and used to enjoy writing on <Link to='https://www.quora.com/profile/Subhranil-Ghoshal-1'>Quora</Link>.<br/><br/>
 					</span>
 				</div>
 
 				<div id='details'>
-					<h3 id='details-title'>Details</h3>
+					<h3 id='details-title'>Basic Details</h3>
 					<table id='details-table'>
 						<tbody>
-							<TR head='Name' details='Subhranil Ghoshal'/>
-							<TR head='Age' details='20'/>
+							<TR head='Full Name' details='Subhranil Ghoshal'/>
 							<TR head='Address' details='Konnagar, Hooghly, West Bengal, India'/>
 							<TR head='Email' details='ghoshalsubhranil@gmail.com'/>
 						</tbody>
