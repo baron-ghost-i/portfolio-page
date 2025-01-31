@@ -13,44 +13,34 @@ interface skillListProps {
 
 const skillsList: skillType = {
 	'Core Subjects': [
-			['Analog Circuits', '60%'],
-			['Digital Circuits', '50%'],
-			['Computer Organization and Architecture', '40%'],
-			['Network Analysis and Synthesis', '60%'],
-			['Analog Communication Systems', '75%'],
-			['Digital Communication Systems', '30%'],
-			['Microwave Engineering', '40%'],
-			['Semiconductor Physics', '40%'],
-			['Control Theory', '40%']
-		],
-	'Core - Software Tools': {
-		'Languages': [
-			['MATLAB/GNU Octave', '60%'],
-			['Python', '90%'],
-			['C', '75%'],
-			['Verilog', '50%'],
-			['LaTeX', '75%']
-		],
-		'Simulators': [
-			['NI Multisim', '85%'],
-			['Proteus', '75%'],
-			['LTSpice', '25%']
-		]
-	},
-	'More Software': {
-		'Web Development': [
-			['JavaScript/TypeScript', '75%'],
-			['HTML5', '65%'],
-			['CSS', '60%'],
-			['React.js', '65%']
-		],
-		'Others': [
-			['SQL', '70%'],
-			['MongoDB', '60%'],
-			['Git', '60%'],
-			['Java', '50%'],
-		]
-	}
+		['Signal Processing', '70%'],
+		['Digital Design/Computer Architecture', '70%'],
+		['Embedded Systems', '60%'],
+		['Communication System Design', '60%'],
+		['Control Engineering', '60%'],
+		['Analog Design', '55%'],
+		['Semiconductor Physics', '55%'],
+		['Microwave Engineering', '40%'],
+	],
+	'Core Tools/Skills': [
+		['Python', '85%'],
+		['MATLAB', '70%'],
+		['C/C++', '65%'],
+		['Verilog/SystemVerilog', '60%'],
+		['Tcl', '50%'],
+		['LaTeX', '70%'],
+		['LTSpice', '50%'],
+		['NI Multisim', '85%'],
+	],
+	'Additional Tools/Skills': [
+		['Git', '60%'],
+		['JavaScript/TypeScript', '75%'],
+		['HTML5/CSS3', '65%'],
+		['React.js', '65%'],
+		['SQL', '70%'],
+		['MongoDB', '60%'],
+		['Java', '50%'],
+	]
 }
 
 function Bar({width}:{width:string}) {
@@ -119,8 +109,8 @@ export default function Skills(){
 		<Page id='skillsPage' animated="svg > rect, #skillsPage > #content" >
 			<div id='content'>
 				<Section section='Core Subjects' List={skillsList}/>
-				<Section section="Core - Software Tools" List={skillsList}/>
-				<Section section='More Software' List={skillsList}/>
+				<Section section="Core Tools/Skills" List={skillsList}/>
+				<Section section='Additional Tools/Skills' List={skillsList}/>
 			</div>
 		</Page>
 	)
