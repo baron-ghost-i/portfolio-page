@@ -17,7 +17,7 @@
 }
 
 #skillsPage h3 {
-	margin: 0em 0em 1em 0em;
+	margin: 0em 0em 0.5em 0em;
 }
 
 #skillsPage h4 {
@@ -53,7 +53,7 @@ li.skills {
 }
 
 svg {
-	height: 0.5em;
+	height: 0.6em; /*0.5em created an unexpected white line - observed on Google Chrome v132.0.6834.160*/
 	width: clamp(90%, 22em, 100%);
 	border: solid 1px black;
 	box-shadow: 0.1em 0.1em 0.1em black;
