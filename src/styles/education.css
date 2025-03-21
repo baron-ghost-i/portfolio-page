@@ -79,6 +79,12 @@
 .night .image#jeea {
 	background-image: url('../assets/education/iitb-night.svg');
 }
+.image#gate {
+	background-image: url('../assets/education/iitr.png');
+}
+.night .image#gate {
+	background-image: url('../assets/education/iitr-night.png');
+}
 
 .image > a {
 	background-color: transparent;

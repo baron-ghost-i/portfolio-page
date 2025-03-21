@@ -25,6 +25,7 @@ const entity: {[key: string]:Array<string>} = {
 	'jeea': ['JEE Advanced', '', '', 'https://www.jeeadv.ac.in'],
 	'jeem': ['JEE Main', '', '', 'https://jeemain.nta.ac.in'],
 	'wbjee': ['WBJEE', '', '', 'https://wbjeeb.nic.in'],
+	'gate': ['GATE', '', '', 'https://gate2025.iitr.ac.in']
 }
 
 const content: {[key: string]:Array<Array<string>>} = {
@@ -105,8 +106,7 @@ class Field extends Component<EFProps, stateType> {
 			<div className='listItem' id={name}>
 				{/*Will make/add modifiable SVG later using <object>*/}
 				<div className='image' id={name}>
-					<a href={entity[name][3]} target="_blank" rel='noopener noreferrer'>
-					</a>
+					<a href={entity[name][3]} target="_blank" rel='noopener noreferrer'></a>
 				</div>
 				<h3>{entity[name][0]}</h3>
 				<p className='descriptor'>
@@ -173,14 +173,23 @@ export default function Education(){
 					/>
 				</div>
 		
-				<h2>Examinations</h2>
+				<h2>Examinations</h2>	
 				<div id='timeline'>
+					<Field
+						name='gate'
+						description='EC, 2025'
+						start=''
+						end=''
+						content={'AIR 110\nScore: 819/1000'}
+						moreDetails={false}
+					/>
+
 					<Field
 						name='jeea'
 						description='2022'
 						start=''
 						end=''
-						content='GMR: 19553'
+						content='GMR 19553'
 						moreDetails={false}
 					/>
 		
@@ -189,7 +198,7 @@ export default function Education(){
 						description='2022'
 						start=''
 						end=''
-						content={("GMR: 16941\nPercentile: 98.1441546\nAlloted seat in B.Tech. "
+						content={("GMR 16941, 98.1441546 %ile\nAlloted seat in B.Tech. "
 							+"Electrical Engineering program at NIT Durgapur in first round of JoSAA")}
 						moreDetails={false}
 					/>
@@ -199,7 +208,7 @@ export default function Education(){
 						description='2022'
 						start=''
 						end=''
-						content={('GMR: 605\nPMR: 313\nSecured seat in B.E. Electronics and '
+						content={('GMR 605\nPMR 313\nSecured seat in B.E. Electronics and '
 							+'Tele-Communication Engineering program at Jadavpur University')}
 						moreDetails={false}
 					/>
