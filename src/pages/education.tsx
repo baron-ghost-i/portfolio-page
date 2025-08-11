@@ -33,7 +33,9 @@ const content: {[key: string]:Array<Array<string>>} = {
 		['1st', '9.10'],
 		['2nd', '8.24'],
 		['3rd', '9.38'],
-		['4th', '9.38']
+		['4th', '9.38'],
+		['5th', '9.18'],
+		['6th', '9.88'],
 	],
 	'kps-2020': [
 		['Physics', '95'],
@@ -141,7 +143,7 @@ export default function Education(){
 						description='B.E. Electronics and Tele-Communication Engineering'
 						start='2022'
 						end='2026'
-						content='CGPA (upto 2nd Year 1st Semester): 84.54%'
+						content='CGPA (upto 3rd Year 2nd Semester): 9.193/10'
 						moreDetails={true}
 					/>
 

@@ -24,8 +24,8 @@ const skillsList: skillType = {
 	],
 	'Core Tools/Skills': [
 		['Python', '85%'],
-		['MATLAB', '70%'],
-		['C/C++', '65%'],
+		['MATLAB', '75%'],
+		['C/C++', '85%'],
 		['Verilog/SystemVerilog', '60%'],
 		['Tcl', '50%'],
 		['LaTeX', '70%'],
