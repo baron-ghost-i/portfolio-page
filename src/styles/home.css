@@ -1,6 +1,7 @@
 #homePage {
 	font-weight: 100;
 	display: flex;
+	flex-grow: 1;
 	align-items: center;
 	justify-content: center;
 }

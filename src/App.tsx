@@ -7,6 +7,7 @@ import NavBar from "./pages/layout"
 import Home from "./pages/home"
 import AboutMe from "./pages/about";
 import Education from './pages/education';
+import Work from './pages/work';
 import Skills from './pages/skills';
 import Projects from "./pages/projects"
 import Contact from './pages/contact';
@@ -36,6 +37,7 @@ function Content({prop}:{prop: contentProp}) {
 				<Route path="/" element={ <NavBar {...prop}/> }>
 					<Route index element={<Home/>} />
 					<Route path="/about" element={<AboutMe/>} />
+					<Route path="/work" element={<Work/>} />
 					<Route path="/education" element={<Education/>} />
 					<Route path="/skills" element={<Skills/>}/>
 					<Route path="/projects" element={<Projects/>} />

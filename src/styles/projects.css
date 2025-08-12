@@ -1,6 +1,7 @@
 #projectsPage {
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	font-size: var(--small);
 	height: 100%;
 }

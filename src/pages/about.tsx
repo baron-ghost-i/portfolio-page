@@ -40,7 +40,7 @@ export default function AboutMe(){
 						<img alt='Subhranil Ghoshal' src='/image-self.jpeg'/>
 
 						Hi! I'm Subhranil Ghoshal, an undergrad student of electronics and tele-communication 
-						engineering in his third year of study at Jadavpur University, Kolkata.<br/><br/>
+						engineering in his fourth year of study at Jadavpur University, Kolkata.<br/><br/>
 
 						I’m passionate about signal processing, with a strong interest in designing digital circuits.
 						Consequently, I am well-acquainted with several tools utilized in these fields, including but not

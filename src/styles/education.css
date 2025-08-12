@@ -1,6 +1,7 @@
 #educationPage, #educationPage > #content {
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 }
 
 #educationPage h2 {
@@ -16,6 +17,7 @@
 /*Timeline*/
 #timeline {
 	display: inline-block;
+	height: 100%;
 	margin-left: 2em;
 	margin-right: 1em;
 	padding-left: 2em;
@@ -151,7 +153,7 @@
 	}
 }
 .more-details:has(#ju) {
-	&.show {max-height: 10em}
+	&.show {max-height: 11em}
 }
 
 table.ed-table, table.ed-table tr {

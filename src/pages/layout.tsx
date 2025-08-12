@@ -68,6 +68,7 @@ export default function NavBar({ dark, setTheme, menuButton, menuChange }:NavBar
 			<div className={"navBar"+(menuButton==="≡"? " closed": "")}>
 				<Linker to="/" {...props}>Home</Linker>
 				<Linker to="/about"{...props}>About Me</Linker>
+				<Linker to="/work" {...props}>Experience</Linker>
 				<Linker to="/education" {...props}>Education</Linker>
 				<Linker to="/skills" {...props}>Skills</Linker>
 				<Linker to="/projects" {...props}>Projects</Linker>

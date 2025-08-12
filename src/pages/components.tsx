@@ -12,6 +12,7 @@ const headers:{[key:string]:string} = {
 	'homePage':'',
 	'aboutPage':'About Me',
 	'educationPage': 'Education',
+	'workPage': 'Work Experience',
 	'skillsPage':'Skills',
 	'projectsPage':'Projects',
 	'contactPage': 'Contact Me',

@@ -1,0 +1,107 @@
+#workPage, #workPage > #content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+#workPage h2 {
+	margin-left: 3em;
+	margin-right: 3em;
+	margin-bottom: 0.5em;
+	text-align: center;
+	border-bottom: solid 1px;
+	animation: appear 0.5s both;
+	font-weight: 600;
+}
+
+/*Timeline*/
+#workPage #timeline {
+	display: inline-block;
+	height: 100%;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	margin-left: 2em;
+	margin-right: 1em;
+	padding-left: 2em;
+	border-left: solid 0.4em var(--blue-dark);
+	
+	animation: appear 0.5s ease-in-out 0s 1 normal both;
+}
+.night #workPage #timeline {
+	border-color: var(--blue-light);
+}
+.listItem > .image {
+	box-sizing: content-box;
+	background-size: contain;
+	height: 2em;
+	width: 2em;
+	position: absolute;
+	left: 1em;
+	border: solid 0.2em var(--blue-dark);
+	border-radius: 2em;
+	background-color: var(--bg);
+	z-index: 1;
+	animation: popup 0.5s ease-in-out 0s 1 normal both;
+}
+
+.night .listItem > .image{
+	border-color: var(--blue-light);
+	background-color: var(--bg-dark);
+}
+
+.image#tcs {
+	background-image: url('../assets/work/tcs.png');
+}
+
+.image > a {
+	background-color: transparent;
+	display:block;
+	height: 100%;
+	width: 100%;
+}
+
+/*Internal design*/
+.listItem {
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+	& *:not(.image) {
+		position: relative;
+		animation: slidein 0.5s linear 0s 1 normal forwards;
+	}
+}
+
+.listItem > h3 {
+	font-weight: 500;
+	margin-bottom: 0;
+}
+.listItem > p.descriptor {
+	margin: 0;
+	font-size: 0.75em;
+}
+.listItem > p.descriptor::first-line{
+	font-size: 1.25em;
+}
+.listItem > p.content {
+	font-size: 0.8em;
+	margin: 0;
+	margin-top: 0.5em;
+	white-space: pre-wrap;
+}
+
+@media (max-width:480px) {
+	#workPage {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-aspect-ratio:1/1) and (min-width: 240px) {
+	#workPage {
+		font-size: 2rem;
+	}
+}
+
+@media (max-aspect-ratio:1/1) and (min-width:480px){
+	#workPage {
+		font-size: 1.75rem;
+	}
+}
