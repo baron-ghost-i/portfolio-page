@@ -68,6 +68,7 @@
 		position: relative;
 		animation: slidein 0.5s linear 0s 1 normal forwards;
 	}
+	max-width: 60%;
 }
 
 .listItem > h3 {
@@ -86,6 +87,7 @@
 	margin: 0;
 	margin-top: 0.5em;
 	white-space: pre-wrap;
+	text-align: justify;
 }
 
 @media (max-width:480px) {
@@ -103,5 +105,11 @@
 @media (max-aspect-ratio:1/1) and (min-width:480px){
 	#workPage {
 		font-size: 1.75rem;
+	}
+}
+
+@media (max-aspect-ratio:1/1) {
+	.listItem {
+		max-width: 100%;
 	}
 }

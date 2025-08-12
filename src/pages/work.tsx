@@ -44,7 +44,7 @@ export default function Work(){
 						description='CTO Lab, Research and Innovations Lab, Tata Consultancy Services'
 						start='June 6, 2025'
 						end='August 7, 2025'
-						content={'Developed a Python library for optimizing multiplications and MAC operations on matrices storing 4-bit integers.\nAchieved over 100x speedup compared to NumPy, 20x speedup over PyTorch, and on par with PyTorch\'s linear\ntransformation kernel for quantized tensors. Reduced memory footprint by half using packing.'}
+						content={'Developed a Python library for optimizing multiplications and MAC operations on matrices storing 4-bit integers.\nAchieved over 100x speedup compared to NumPy, 20x speedup over PyTorch, and on par with PyTorch\'s linear transformation kernel for quantized tensors.\nReduced memory footprint by half using integer packing.'}
 					/>
 				</div>
 			</div>
