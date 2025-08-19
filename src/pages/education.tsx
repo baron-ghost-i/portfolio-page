@@ -112,16 +112,19 @@ class Field extends Component<EFProps, stateType> {
 				</div>
 				<h3>{entity[name][0]}</h3>
 				<p className='descriptor'>
-					{description} <br/> {start===''?null:(start + ' - ' + end)}
+					{description}
 				</p>
-				<p className='content'>
+				<p className="duration">
+					{start===''?null:(start + ' - ' + end)}
+				</p>
+				<div className='content'>
 					{content} <br/>
 					{moreDetails?(
 						<span onClick={this.toggleDetails} className={'show-more'+(this.state.more?' show':'')}>
 							Details
 						</span>
 					):null}
-				</p>
+				</div>
 				{moreDetails?(
 					<div className={"more-details"+(this.state.more?' show':'')}>
 						{this.moreDetails()}
@@ -210,7 +213,7 @@ export default function Education(){
 						description='2022'
 						start=''
 						end=''
-						content={('GMR 605\nPMR 313\nSecured seat in B.E. Electronics and '
+						content={('GMR 605, PMR 313\nSecured seat in B.E. Electronics and '
 							+'Tele-Communication Engineering program at Jadavpur University')}
 						moreDetails={false}
 					/>

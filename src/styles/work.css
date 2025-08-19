@@ -77,12 +77,13 @@
 }
 .listItem > p.descriptor {
 	margin: 0;
+	font-size: 0.9em;
+}
+.listItem > p.duration{
+	margin: 0;
 	font-size: 0.75em;
 }
-.listItem > p.descriptor::first-line{
-	font-size: 1.25em;
-}
-.listItem > p.content {
+.listItem > div.content {
 	font-size: 0.8em;
 	margin: 0;
 	margin-top: 0.5em;
@@ -110,6 +111,6 @@
 
 @media (max-aspect-ratio:1/1) {
 	.listItem {
-		max-width: 100%;
+		max-width: 90%;
 	}
 }

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, ReactNode } from "react";
 import "../styles/work.css"
 import Page from "./components"
 
@@ -7,7 +7,7 @@ interface EFProps {
 	description: string;
 	start: string;
 	end: string;
-	content: string;
+	content: string | ReactNode;
 }
 
 const entity: {[key: string]:Array<string>} = {
@@ -24,11 +24,14 @@ class Field extends Component<EFProps> {
 				</div>
 				<h3>{entity[name][0]}</h3>
 				<p className='descriptor'>
-					{description} <br/> {start===''?null:(start + ' - ' + end)}
+					{description}
 				</p>
-				<p className='content'>
+				<p className="duration">
+					{start===''?null:(start + ' - ' + end)}
+				</p>	
+				<div className='content'>
 					{content} <br/>
-				</p>
+				</div>
 			</div>
 		)
 	}	
@@ -44,7 +47,15 @@ export default function Work(){
 						description='CTO Lab, Research and Innovations Lab, Tata Consultancy Services'
 						start='June 6, 2025'
 						end='August 7, 2025'
-						content={'Developed a Python library for optimizing multiplications and MAC operations on matrices storing 4-bit integers.\nAchieved over 100x speedup compared to NumPy, 20x speedup over PyTorch, and on par with PyTorch\'s linear transformation kernel for quantized tensors.\nReduced memory footprint by half using integer packing.'}
+						content={
+							<>
+								Developed a Python library for optimizing multiplications and MAC operations on matrices storing 4-bit integers.
+								<ul>
+									<li>Achieved over 100x speedup compared to NumPy, 20x speedup over PyTorch, and on par with PyTorch's linear transformation kernel for quantized tensors.</li>
+									<li>Reduced memory footprint by half using integer packing.</li>
+								</ul>
+							</>
+						}
 					/>
 				</div>
 			</div>
